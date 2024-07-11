@@ -66,3 +66,37 @@ logo.classList.remove("logo");
 
 /* let logoRef = document.querySelector(".logo");
 logoRef.classList.remove("logo"); */
+
+// 12
+const nav = document.querySelector("nav");
+let menuItem = document.createElement("a"); // skapa ett a element i nav
+menuItem.innerText = "Click me!";
+menuItem.setAttribute("href", "#");
+nav.appendChild(menuItem); // förankra menu item
+
+// 13
+const main = document.querySelector("main");
+const productDesc = `        <article class="art-4">
+            <figure><img src="img/hoodie-ash.png" alt="hoodie"></figure>
+            <h2>Sinus Hoodie</h2>
+            <h3>Ash</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus doloremque ducimus enim!</p>
+            <button>buy</button>
+        </article>`;
+main.insertAdjacentHTML("beforeend", productDesc);
+
+// 14
+const logo2 = document.querySelector("body > header:nth-child(1) > img:nth-child(1)");
+logo.addEventListener("click", (event) => {
+  console.log("found you!");
+});
+
+// 15
+const allProducts = document.querySelectorAll("main > article");
+
+allProducts.forEach((product) =>
+  product.addEventListener("click", (e) => {
+    const name = product.querySelector("h3");
+    console.log(`Hi, I'm article ${name.innerText}`);
+  })
+);
